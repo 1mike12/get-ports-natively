@@ -1,0 +1,30 @@
+name: Cross-platform Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [22]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'yarn'  # Enable caching for yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile  # Equivalent to npm ci
+
+      - name: Build
+        run: yarn build
+
+      - name: Run tests
+        run: yarn test

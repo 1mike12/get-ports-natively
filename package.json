@@ -1,7 +1,7 @@
 {
-  "name": "your-module",
+  "name": "get-ports-natively",
   "version": "1.0.0",
-  "description": "A tiny module with Node, TypeScript, and top-level await support",
+  "description": "get ports using native OS commands",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
