@@ -1,6 +1,6 @@
 import {getMacPorts} from './getMacPorts';
 import * as os from 'os';
-import assert from 'assert';
+import assert from 'node:assert';
 import test from 'node:test';
 
 test('getMacPorts', {skip: os.platform() !== 'darwin'}, async () => {

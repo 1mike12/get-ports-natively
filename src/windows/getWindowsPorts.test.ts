@@ -1,5 +1,5 @@
 import * as os from 'os';
-import assert from 'assert';
+import assert from 'node:assert';
 import test from 'node:test';
 import {getWindowsPorts} from "./getWindowsPorts";
 
