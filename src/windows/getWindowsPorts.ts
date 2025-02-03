@@ -1,7 +1,8 @@
 import {execAndGetOutput} from "../execAndGetOutput";
 
 export async function getWindowsPorts() {
-    const command = `powershell -Command "netstat -an | Select-String 'LISTENING' | ForEach-Object { (($_.ToString() -split '\\s+')[1] -replace '^\\[|\\]$', '') -split ':' | Select-Object -Last 1 } | Sort-Object -Unique"`;
+    // Using CMD commands: findstr for filtering and for /f for string processing
+    const command = `netstat -an | findstr "LISTENING" | for /f "tokens=2" %i in ('findstr ":"') do @echo %i | for /f "tokens=2 delims=:" %j in ('more') do @echo %j`;
     const result = await execAndGetOutput(command);
     const set = new Set<number>();
     for (let line of result.split('\n')) {
