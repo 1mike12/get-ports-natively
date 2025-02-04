@@ -1,13 +1,20 @@
 import {getMacPorts} from './getMacPorts';
 import * as os from 'os';
-import assert from 'node:assert';
-import test from 'node:test';
+import {expect} from 'chai';
 
-test('getMacPorts', {skip: os.platform() !== 'darwin'}, async () => {
-    const ports = await getMacPorts();
-    assert(ports instanceof Set, 'Expected ports to be an instance of Set');
-    for (let port of Array.from(ports)) {
-        assert(typeof port === 'number', 'Expected port to be a number');
-        assert(port > 0, 'Expected port to be above 0');
-    }
+describe('getMacPorts', function () {
+    before(function () {
+        if (os.platform() !== 'darwin') {
+            this.skip();
+        }
+    });
+
+    it('should return a set of ports', async function () {
+        const ports = await getMacPorts();
+        expect(ports).to.be.instanceOf(Set);
+        for (let port of ports) {
+            expect(port).to.be.a('number');
+            expect(port).to.be.above(0);
+        }
+    });
 });
