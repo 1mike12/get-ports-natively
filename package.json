@@ -2,7 +2,7 @@
   "name": "get-ports-natively",
   "author": "1mike12",
   "license": "MPL-2.0",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "get ports using native OS commands",
   "keywords": [
     "ports",
@@ -31,8 +31,11 @@
   },
   "devDependencies": {
     "@types/node": "^22.13.0",
+    "portscanner": "^2.2.0",
     "tsx": "^4.19.2",
     "typescript": "^4.9.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@types/portscanner": "^2.1.4"
+  }
 }
