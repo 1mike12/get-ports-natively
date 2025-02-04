@@ -7,10 +7,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "declaration": true
   },
-  "include": [
-    "src",
-    "test"
-  ]
+  "include": ["src"],
+  "exclude": ["**/*.test.ts", "test"]
 }
