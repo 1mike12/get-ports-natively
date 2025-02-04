@@ -1,4 +1,4 @@
-import {getUsedPorts} from '../getUsedPorts';
+import {getUsedPorts} from '../src/getUsedPorts';
 import net from 'net';
 
 const HIGHEST_PORT_NUMBER = 65535;
