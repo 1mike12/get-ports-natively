@@ -2,7 +2,7 @@
   "name": "get-ports-natively",
   "author": "1mike12",
   "license": "MPL-2.0",
-  "version": "1.0.3",
+  "version": "1.0.12",
   "description": "get ports using native OS commands",
   "keywords": [
     "ports",
