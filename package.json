@@ -1,7 +1,21 @@
 {
   "name": "get-ports-natively",
-  "version": "1.0.0",
+  "author": "1mike12",
+  "license": "MPL-2.0",
+  "version": "1.0.1",
   "description": "get ports using native OS commands",
+  "keywords": [
+    "ports",
+    "network"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1mike12/get-ports-natively.git"
+  },
+  "bugs": {
+    "url": "https://github.com/1mike12/get-ports-natively/issues"
+  },
+  "homepage": "https://github.com/1mike12/get-ports-natively#readme",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
