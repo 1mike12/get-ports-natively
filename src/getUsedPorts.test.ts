@@ -1,12 +1,13 @@
 import {getUsedPorts} from './getUsedPorts';
-import {test} from 'node:test';
-import assert from "node:assert";
+import {expect} from 'chai';
 
-test('getUsedPorts should return a set of ports for whatever the current system is', async () => {
-    const ports = await getUsedPorts();
-    assert(ports instanceof Set);
-    for (let port of ports) {
-        assert(typeof port === 'number');
-        assert(port > 0);
-    }
+describe('getUsedPorts', function () {
+    it('should return a set of ports for whatever the current system is', async function () {
+        const ports = await getUsedPorts();
+        expect(ports).to.be.instanceOf(Set);
+        for (let port of ports) {
+            expect(port).to.be.a('number');
+            expect(port).to.be.above(0);
+        }
+    });
 });
